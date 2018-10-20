@@ -10,19 +10,24 @@ package:
 source:
   fn: beeswarm_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/beeswarm_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/beeswarm/beeswarm_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/beeswarm_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/beeswarm/beeswarm_{{ version }}.tar.gz
   sha256: 0115425e210dced05da8e162c8455526a47314f72e441ad2a33dcab3f94ac843
 
 build:
-  number: 0
+  merge_build_host: True  # [win]
+  number: 1
   skip: true  # [win32]
 
   rpaths:
     - lib/R/lib/
     - lib/
+
 requirements:
   build:
+    - {{posix}}zip               # [win]
+
+  host:
     - r-base
 
   run:
@@ -30,7 +35,7 @@ requirements:
 
 test:
   commands:
-    - $R -e "library('beeswarm')"  # [not win]
+    - $R -e "library('beeswarm')"           # [not win]
     - "\"%R%\" -e \"library('beeswarm')\""  # [win]
 
 about:
@@ -46,3 +51,4 @@ extra:
     - jdblischak
     - johanneskoester
     - bgruening
+    - nsoranzo
