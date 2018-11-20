@@ -14,9 +14,8 @@ Summary: The bee swarm plot is a one-dimensional scatter plot like "stripchart",
 Current build status
 ====================
 
-[![Linux](https://img.shields.io/circleci/project/github/conda-forge/nsoranzo_r-beeswarm-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/nsoranzo_r-beeswarm-feedstock)
-[![OSX](https://img.shields.io/travis/conda-forge/nsoranzo_r-beeswarm-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/nsoranzo_r-beeswarm-feedstock)
-[![Windows](https://img.shields.io/appveyor/ci/conda-forge/nsoranzo_r-beeswarm-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/nsoranzo-r-beeswarm-feedstock/branch/master)
+All platforms:
+[![noarch](https://img.shields.io/circleci/project/github/conda-forge/r-beeswarm-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/r-beeswarm-feedstock)
 
 Current release info
 ====================
