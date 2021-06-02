@@ -1,4 +1,4 @@
-{% set version = "0.3.1" %}
+{% set version = "0.4.0" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,7 +12,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/beeswarm_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/beeswarm/beeswarm_{{ version }}.tar.gz
-  sha256: 525e61e71206feab28885d90a0311a09a2ebc66a730016d984e770eeaf7f4fcb
+  sha256: 51f4339bf4080a2be84bb49a844c636625657fbed994abeaa42aead916c3d504
 
 build:
   noarch: generic
