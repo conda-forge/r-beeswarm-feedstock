@@ -48,8 +48,8 @@ about:
   license_family: OTHER
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/Artistic-2.0
+
 extra:
   recipe-maintainers:
     - conda-forge/r
-    - jdblischak
     - nsoranzo
