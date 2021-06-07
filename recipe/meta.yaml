@@ -15,18 +15,26 @@ source:
   sha256: 51f4339bf4080a2be84bb49a844c636625657fbed994abeaa42aead916c3d504
 
 build:
-  noarch: generic
   merge_build_host: true  # [win]
-  number: 0
-
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
+  build:
+    - {{ compiler('c') }}              # [not win]
+    - {{ compiler('m2w64_c') }}        # [win]
+    - {{ compiler('cxx') }}            # [not win]
+    - {{ compiler('m2w64_cxx') }}      # [win]
+    - {{ posix }}filesystem        # [win]
+    - {{ posix }}make
+    - {{ posix }}sed               # [win]
+    - {{ posix }}coreutils         # [win]
+    - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
-
   run:
     - r-base
 
@@ -39,15 +47,11 @@ about:
   home: http://www.cbs.dtu.dk/~eklund/beeswarm/
   license: Artistic-2.0
   summary: 'The bee swarm plot is a one-dimensional scatter plot like "stripchart", but with closely-packed, non-overlapping points. '
-
   license_family: OTHER
-
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/Artistic-2.0
 extra:
   recipe-maintainers:
     - conda-forge/r
     - jdblischak
-    - johanneskoester
-    - bgruening
     - nsoranzo
